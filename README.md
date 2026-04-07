@@ -6,6 +6,7 @@ Permite explorar productos, ver detalles, guardar favoritos y gestionar el catá
 ---
 
 ## 📁 Estructura del proyecto
+```
 frontendproject/
 ├── Home.html # Página de inicio con hero y cafés destacados
 ├── Catalog.html # Listado completo con buscador en tiempo real
@@ -25,7 +26,7 @@ frontendproject/
 │ └── productos.json # Catálogo base de 6 cafés colombianos
 └── assets/
 └── img/ # Imágenes locales (opcional)
-
+```
 
 ---
 
