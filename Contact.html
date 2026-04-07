@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Colombia Café Lab</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="Home.html" class="logo">
+        <span class="logo-icon">☕</span>
+        Colombia Café Lab
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul class="site-nav" id="siteNav">
+          <li><a href="Home.html">Inicio</a></li>
+          <li><a href="Catalog.html">Catálogo</a></li>
+          <li><a href="Favorites.html">Favoritos</a></li>
+          <li><a href="Contact.html" class="active">Contacto</a></li>
+          <li><a href="Aadmin.html">Administrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <h1 class="contact-form-title">Contáctanos</h1>
+
+          <!-- Formulario de contacto -->
+          <form id="contactForm" novalidate>
+
+            <!-- Nombre -->
+            <div class="form-group">
+              <label for="inputNombre">
+                Nombre <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="inputNombre"
+                class="form-control"
+                placeholder="Tu nombre completo"
+                autocomplete="name"
+              />
+              <p class="form-error" id="errorNombre"></p>
+            </div>
+
+            <!-- Correo -->
+            <div class="form-group">
+              <label for="inputCorreo">
+                Correo electrónico <span class="required">*</span>
+              </label>
+              <input
+                type="email"
+                id="inputCorreo"
+                class="form-control"
+                placeholder="correo@ejemplo.com"
+                autocomplete="email"
+              />
+              <p class="form-error" id="errorCorreo"></p>
+            </div>
+
+            <!-- Asunto -->
+            <div class="form-group">
+              <label for="selectAsunto">Asunto</label>
+              <select id="selectAsunto" class="form-control">
+                <option value="consulta-cafe">Información sobre un café</option>
+                <option value="pedido">Realizar un pedido</option>
+                <option value="mayorista">Consulta mayorista</option>
+                <option value="general">Mensaje general</option>
+              </select>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="form-group">
+              <label for="inputMensaje">
+                Mensaje <span class="required">*</span>
+              </label>
+              <textarea
+                id="inputMensaje"
+                class="form-control"
+                placeholder="¿En qué podemos ayudarte?"
+                rows="5"
+              ></textarea>
+              <p class="form-error" id="errorMensaje"></p>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar mensaje</button>
+
+          </form>
+
+          <!-- Mensaje de éxito (simulado) -->
+          <div class="form-success" id="mensajeExito">
+            ✓ &nbsp;¡Mensaje enviado con éxito! Te responderemos pronto.
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="Home.html" class="logo">
+            <span class="logo-icon">☕</span>
+            Colombia Café Lab
+          </a>
+          <p>Descubre la esencia del café colombiano. Cafés de origen, artesanales y sostenibles.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="Home.html">Inicio</a></li>
+            <li><a href="Catalog.html">Catálogo</a></li>
+            <li><a href="Favorites.html">Favoritos</a></li>
+            <li><a href="Contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <address>
+            <p>✉ contacto@colombiacafelab.com</p>
+            <p>📞 +57 300 123 4567</p>
+          </address>
+          <div class="footer-social">
+            <a href="#" class="social-btn">f</a>
+            <a href="#" class="social-btn">ig</a>
+            <a href="#" class="social-btn">tw</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Colombia Café Lab. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/contacto.js"></script>
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('siteNav').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

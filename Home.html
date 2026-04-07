@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colombia Café Lab — Inicio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="Home.html" class="logo">
+        <span class="logo-icon">☕</span>
+        Colombia Café Lab
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul class="site-nav" id="siteNav">
+          <li><a href="Home.html"       class="active">Inicio</a></li>
+          <li><a href="Catalog.html">Catálogo</a></li>
+          <li><a href="Favorites.html">Favoritos</a></li>
+          <li><a href="Contact.html">Contacto</a></li>
+          <li><a href="Aadmin.html">Administrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container">
+        <h1>Descubre la esencia del<br>café colombiano</h1>
+        <p>Cafés de origen, artesanales y sostenibles</p>
+        <a href="Catalog.html" class="btn-primary">
+          Explorar cafés &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== CAFÉS DESTACADOS ===================== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Cafés destacados</h2>
+        <!-- Las tarjetas se inyectan dinámicamente con JS -->
+        <div class="cards-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIAL ===================== -->
+    <section class="testimonial-section">
+      <div class="container">
+        <blockquote>
+          "El café colombiano no es solo una bebida, es una experiencia que conecta montañas, tradición y sabor en cada taza."
+        </blockquote>
+        <cite>— Juan Valdez, Maestro Cafetero</cite>
+      </div>
+    </section>
+
+    <!-- ===================== INFO CARDS ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-card info-card--mint">
+            <h3>100% Colombiano</h3>
+            <p>Todos nuestros cafés son cultivados en las mejores regiones de Colombia</p>
+          </div>
+          <div class="info-card info-card--pink">
+            <h3>Sostenible</h3>
+            <p>Apoyamos prácticas agrícolas sostenibles y comercio justo</p>
+          </div>
+          <div class="info-card info-card--lavender">
+            <h3>Artesanal</h3>
+            <p>Cada lote es cuidadosamente seleccionado y tostado por expertos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="Home.html" class="logo">
+            <span class="logo-icon">☕</span>
+            Colombia Café Lab
+          </a>
+          <p>Descubre la esencia del café colombiano. Cafés de origen, artesanales y sostenibles.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="Home.html">Inicio</a></li>
+            <li><a href="Catalog.html">Catálogo</a></li>
+            <li><a href="Favorites.html">Favoritos</a></li>
+            <li><a href="Contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <address>
+            <p>✉ contacto@colombiacafelab.com</p>
+            <p>📞 +57 300 123 4567</p>
+          </address>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+            <a href="#" class="social-btn" aria-label="Instagram">ig</a>
+            <a href="#" class="social-btn" aria-label="Twitter">tw</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Colombia Café Lab. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JS ===================== -->
+  <script src="js/productos.js"></script>
+  <script>
+    // Renderiza los cafés destacados en la home
+    const featuredGrid = document.getElementById('featuredGrid');
+
+    // Esperamos a que productos.js esté cargado y usamos cargarCafes()
+    cargarCafes().then(cafes => {
+      const destacados = cafes.filter(c => c.destacado);
+      destacados.forEach(cafe => {
+        featuredGrid.innerHTML += crearTarjeta(cafe);
+      });
+      actualizarCorazones();
+    });
+
+    // Toggle menú móvil
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('siteNav').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
